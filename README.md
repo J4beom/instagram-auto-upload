@@ -15,6 +15,21 @@
 - **`upload.go`**: Playwright를 이용한 인스타그램 원격 제어 및 멀티 이미지 업로드 로직입니다.
 - **`util.go`**: 폰트 설정, 색상 대비 계산 등 이미지 생성을 보조하는 유틸리티 함수 모음입니다.
 - **`export/`**: 생성된 이미지가 실행 날짜별 폴더(`YYMMDD`)에 맞춰 저장되는 공간입니다.
+```
+.
+├── export/                      # 생성된 이미지가 날짜별 폴더로 자동 저장되는 공간
+└── gen-auto-image-to-instagram/ # 프로젝트 폴더
+    ├── font/S-Core_Dream_OTF    # 에스코어 드림 폰트 및 라이선스가 들어있는 파일
+    ├── go.mod                   # module path를 정의
+    ├── go.sum                   # 디펜던시가 사용될 때마다 기존 항목과 비교하여 체크섬 추가
+    └── pkg/release              # 코드가 들어있는 폴더
+        ├── main.go              # 프로그램 진입점 및 전체 워크플로우 제어
+        ├── text.go              # 웹 크롤링 및 Gemini AI 요약 로직
+        ├── image.go             # 그라데이션 배경 및 텍스트 렌더링 (이미지 생성)
+        ├── upload.go            # Playwright 기반 인스타그램 자동화 업로드
+        ├── util.go              # 폰트 설정, 사이즈 계산 등 이미지 생성 보조 도구
+        └── security.json        # 계정 정보 및 설정 파일 (사용자 생성 필요)
+```
 
 ## 🛠️ 기술 스택 및 환경 설정 (M3 MacBook 기준)
 
